@@ -12,6 +12,8 @@
 		36F504F31DC6076200D4C9B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36F504F11DC6076200D4C9B2 /* Main.storyboard */; };
 		36F504F51DC6076200D4C9B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36F504F41DC6076200D4C9B2 /* Assets.xcassets */; };
 		36F504F81DC6076200D4C9B2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36F504F61DC6076200D4C9B2 /* LaunchScreen.storyboard */; };
+		36F505011DC607C900D4C9B2 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F505001DC607C900D4C9B2 /* Post.swift */; };
+		36F505041DC60F6300D4C9B2 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F505031DC60F6300D4C9B2 /* PostCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		36F504F41DC6076200D4C9B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		36F504F71DC6076200D4C9B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		36F504F91DC6076200D4C9B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		36F505001DC607C900D4C9B2 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		36F505031DC60F6300D4C9B2 /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,8 @@
 		36F504EC1DC6076200D4C9B2 /* MyEndz */ = {
 			isa = PBXGroup;
 			children = (
+				36F505021DC60F3F00D4C9B2 /* View */,
+				36F504FF1DC607B600D4C9B2 /* Model */,
 				36F504ED1DC6076200D4C9B2 /* AppDelegate.swift */,
 				36F504EF1DC6076200D4C9B2 /* ViewController.swift */,
 				36F504F11DC6076200D4C9B2 /* Main.storyboard */,
@@ -62,6 +68,22 @@
 				36F504F91DC6076200D4C9B2 /* Info.plist */,
 			);
 			path = MyEndz;
+			sourceTree = "<group>";
+		};
+		36F504FF1DC607B600D4C9B2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				36F505001DC607C900D4C9B2 /* Post.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		36F505021DC60F3F00D4C9B2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				36F505031DC60F6300D4C9B2 /* PostCell.swift */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,8 +158,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36F505011DC607C900D4C9B2 /* Post.swift in Sources */,
 				36F504F01DC6076200D4C9B2 /* ViewController.swift in Sources */,
 				36F504EE1DC6076200D4C9B2 /* AppDelegate.swift in Sources */,
+				36F505041DC60F6300D4C9B2 /* PostCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
