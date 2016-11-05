@@ -12,20 +12,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     @IBOutlet weak var tableView: UITableView!
     
-    var posts = [Post]()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        DataService.instance.loadPosts()
         
-        let post = Post(imagePath: "", title: "Title 1", description: "Post 1 is about how i really need to get back into shape")
-        let post2 = Post(imagePath: "", title: "Title 2", description: "Post 2 is about how I have no idea whether i should be in this lifetime. I mean does she really care about me")
-        
-        posts.append(post)
-        posts.append(post2)
-        
-        tableView.reloadData()
+        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.onPostsLoaded), name: NSNotification.Name(rawValue: "postsLoaded"), object: nil)
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -33,12 +26,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let post = DataService.instance.loadedPosts[indexPath.row]
         if let cell = tableView.dequeueReusableCell(withIdentifier: "postCell") as? PostCell {
-            cell.configureCell(post: posts[indexPath.row])
+            cell.configureCell(post: post)
             return cell
         }
         let cell = PostCell()
-        cell.configureCell(post: posts[indexPath.row])
+        cell.configureCell(post: post)
         return cell
     }
     
@@ -47,7 +41,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return posts.count
+        return DataService.instance.loadedPosts.count
+    }
+    
+    func onPostsLoaded(notif: AnyObject) {
+        tableView.reloadData()
     }
 
 }
